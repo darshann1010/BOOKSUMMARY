@@ -1,0 +1,241 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+/* General Fade In and Slide Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation only when a section is hovered */
+.category:hover h2,
+.category:hover .book-card,
+.contact:hover h2,
+.feedback-form:hover {
+  animation: fadeInUp 0.3s ease-out forwards;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Initially Hide Elements */
+.category h2,
+.book-card,
+.contact h2,
+.feedback-form {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: ease 0.5s;
+}
+
+/* Initially hide elements */
+.category,
+.contact,
+.feedback-form {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+/* When the section comes into view */
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+/* Unique Font for Summaries */
+.book-card p {
+  font-family: "Merriweather", serif;
+  line-height: 1.6;
+  margin: 1rem 0;
+}
+
+/* Navigation Bar */
+nav {
+  background: #000000;
+  padding: 1rem 5%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.nav-links a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+/* Hero Section */
+.hero {
+  height: 80vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8b3BlbiUyMGJvb2t8ZW58MHx8MHx8&w=1000&q=80")
+      center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding-top: 60px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Book Categories Section */
+.category {
+  padding: 4rem 5%;
+}
+
+.category h2 {
+  color: #293249;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 5px;
+}
+
+.book-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.book-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 5px;
+  transition: ease-in 0.3s;
+}
+
+.reviews {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+}
+
+#about {
+  font-size: 1.1rem; /* Adjust as needed */
+}
+
+#about h2,
+#about h3 {
+  font-size: 1.3rem; /* Adjust headings separately if needed */
+}
+
+/* Contact Section */
+.contact {
+  padding: 5rem 7%;
+  background: #000000;
+  color: white;
+  font-size: 1.4rem; /* Adjust the size as needed */
+}
+
+.social-icons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* Feedback Form */
+.feedback-form {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  background: #000000;
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer {
+  background: #000000;
+  color: white;
+  text-align: center;
+  padding: 2rem 5%;
+}
+.book-card img:hover {
+  transform: scale(1.1); /* Zoom in by 10% on hover */
+}
